@@ -41,7 +41,7 @@ var
 implementation
 uses unit2,unit3;
 {$R *.dfm}
-//Скрываем форму Form1 и открывает Form2 при нажатии кнопки  "Меню"
+//РЎРєСЂС‹РІР°РµРј С„РѕСЂРјСѓ Form1 Рё РѕС‚РєСЂС‹РІР°РµС‚ Form2 РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё  "РњРµРЅСЋ"
 procedure TForm1.N4Click(Sender: TObject);
 begin
 Form1.close;
@@ -58,7 +58,7 @@ Buf:=TBitmap.Create;
 Buf.Width:=960;
 Buf.Height:=640;
 
-//Путь до картинок
+//РџСѓС‚СЊ РґРѕ РєР°СЂС‚РёРЅРѕРє
 Kart:=TJpegImage.Create;
 Kart.LoadFromFile(path+'\Image\1.jpg');
 
@@ -70,7 +70,7 @@ Orig.Canvas.StretchDraw(Rect(0,0,480,320),Kart);
 
 for i:=0 to 15 do
 for j:=0 to 15 do
-//Два массива на два поле, 1-поле где складывается пазл,2-поле где ранее загруженная картинка разбивается на части
+//Р”РІР° РјР°СЃСЃРёРІР° РЅР° РґРІР° РїРѕР»Рµ, 1-РїРѕР»Рµ РіРґРµ СЃРєР»Р°РґС‹РІР°РµС‚СЃСЏ РїР°Р·Р»,2-РїРѕР»Рµ РіРґРµ СЂР°РЅРµРµ Р·Р°РіСЂСѓР¶РµРЅРЅР°СЏ РєР°СЂС‚РёРЅРєР° СЂР°Р·Р±РёРІР°РµС‚СЃСЏ РЅР° С‡Р°СЃС‚Рё
 begin
 Copia[i,j]:=0;
 Pole[i,j]:=0;
@@ -83,8 +83,8 @@ end;
 
 
 end;
-//Определение уровня сложности/////////////
-//Уровень сложности "лёгкий" 4х4 пазла
+//РћРїСЂРµРґРµР»РµРЅРёРµ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё/////////////
+//РЈСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё "Р»С‘РіРєРёР№" 4С…4 РїР°Р·Р»Р°
 procedure TForm1.N441Click(Sender: TObject);
 begin
 Mer:=4;
@@ -92,14 +92,14 @@ Puzzle;
 Timer1.Enabled:=True;
 
 end;
-//Уровень сложности "Нормальный" 8х8 пазлов
+//РЈСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё "РќРѕСЂРјР°Р»СЊРЅС‹Р№" 8С…8 РїР°Р·Р»РѕРІ
 procedure TForm1.N881Click(Sender: TObject);
 begin
 Mer:=8;
 Puzzle;
 Timer1.Enabled:=True;
 end;
-//Уровень сложности "Сложный" 16х16 пазлов
+//РЈСЂРѕРІРµРЅСЊ СЃР»РѕР¶РЅРѕСЃС‚Рё "РЎР»РѕР¶РЅС‹Р№" 16С…16 РїР°Р·Р»РѕРІ
 procedure TForm1.N16161Click(Sender: TObject);
 begin
 Mer:=16;
@@ -108,13 +108,13 @@ Timer1.Enabled:=True;
 end;
 /////////////////////////////////////////////
 
-//Таймер, который будет завершать игру при правильном сложении пазлов
+//РўР°Р№РјРµСЂ, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ Р·Р°РІРµСЂС€Р°С‚СЊ РёРіСЂСѓ РїСЂРё РїСЂР°РІРёР»СЊРЅРѕРј СЃР»РѕР¶РµРЅРёРё РїР°Р·Р»РѕРІ
 procedure TForm1.Timer1Timer(Sender: TObject);
 var i,j,n,Tolst,MX,MY:integer;
 MapColor:TColor;
 win:boolean;
 begin
- //Проверка на правильность сложенного пазла с выводом сообщения
+ //РџСЂРѕРІРµСЂРєР° РЅР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ СЃР»РѕР¶РµРЅРЅРѕРіРѕ РїР°Р·Р»Р° СЃ РІС‹РІРѕРґРѕРј СЃРѕРѕР±С‰РµРЅРёСЏ
  win:=true;
  n:=1;
  for i:=0 to Mer-1 do
@@ -126,7 +126,7 @@ begin
  if win=true then
  begin
   Timer1.Enabled:=false;
-  ShowMessage('Пазл сложен правильно!');
+  ShowMessage('РџР°Р·Р» СЃР»РѕР¶РµРЅ РїСЂР°РІРёР»СЊРЅРѕ!');
  end;
 Buf.Canvas.Brush.Color:=ClWhite;
 Buf.Canvas.Rectangle(0,0,960,320);
@@ -134,13 +134,13 @@ Buf.Canvas.Rectangle(0,0,960,320);
  for i:=0 to Mer-1 do
  for j:=0 to Mer-1 do
  begin
- //Основное поле
+ //РћСЃРЅРѕРІРЅРѕРµ РїРѕР»Рµ
  if Pole[i,j]>0 then Buf.Canvas.Draw(i*XX,j*YY,Pazl[Pole[i,j] ] );
  //copia
  if Copia[i,j]>0 then Buf.Canvas.Draw(i*XX+480,j*YY,Pazl [Copia[i,j] ] );
  end;
 
- //Создание сетки
+ //РЎРѕР·РґР°РЅРёРµ СЃРµС‚РєРё
  Tolst:=1;
  MapColor:=clBlack;
  MY:=0;
@@ -149,13 +149,13 @@ Buf.Canvas.Rectangle(0,0,960,320);
   MX:=480;
  Map(XX,YY,MX,MY,Mer,Mer,Tolst,MapColor,Buf);
 
- //Клик на пазл
+ //РљР»РёРє РЅР° РїР°Р·Р»
   if PuzClick>0 then Buf.Canvas.Draw(Mouse.CursorPos.X-Form1.Left-(XX div 2),Mouse.CursorPos.Y-Form1.Top-25-(YY div 2),Pazl[PuzClick]);
 
  form1.Canvas.Draw(0,0,Buf);
 end;
-//Программа создаёт игровое поле, затем разбивает картинку на кусочки
-//в зависимости от уровня сложности
+//РџСЂРѕРіСЂР°РјРјР° СЃРѕР·РґР°С‘С‚ РёРіСЂРѕРІРѕРµ РїРѕР»Рµ, Р·Р°С‚РµРј СЂР°Р·Р±РёРІР°РµС‚ РєР°СЂС‚РёРЅРєСѓ РЅР° РєСѓСЃРѕС‡РєРё
+//РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СѓСЂРѕРІРЅСЏ СЃР»РѕР¶РЅРѕСЃС‚Рё
  Procedure Puzzle;
  var i,j,n:integer;
  begin
@@ -243,17 +243,17 @@ end
  else
  begin
  S:=False;
-//Клики по пазлам справа
+//РљР»РёРєРё РїРѕ РїР°Р·Р»Р°Рј СЃРїСЂР°РІР°
 if (X>=480) and (X<=960) and (Y>=0) and (Y<=320) then
 begin
-//Берем пазл
+//Р‘РµСЂРµРј РїР°Р·Р»
 if (Copia[(X-480) div XX,Y div YY]>0)and (PuzClick=0) then
 begin
  PuzClick:=Copia[(X-480) div XX,Y div YY];
  Copia[(X-480) div XX,Y div YY]:=0;
  S:=True;
 end;
-//Кладем пазл на полотно
+//РљР»Р°РґРµРј РїР°Р·Р» РЅР° РїРѕР»РѕС‚РЅРѕ
 if (Copia[(X-480) div XX,Y div YY]=0)and (PuzClick>0) and (S=False) then
 begin
  Copia[(X-480) div XX,Y div YY]:=PuzClick;
@@ -261,17 +261,17 @@ begin
  end;
 end;
 
-//Клики на пазл Слева
+//РљР»РёРєРё РЅР° РїР°Р·Р» РЎР»РµРІР°
 if (X>=0) and (X<=480) and (Y>=0) and (Y<=320) then
 begin
-//Берем пазл
+//Р‘РµСЂРµРј РїР°Р·Р»
 if (Pole[X div XX,Y div YY]>0)and (PuzClick=0) then
 begin
  PuzClick:=Pole[X div XX,Y div YY];
  Pole[X div XX,Y div YY]:=0;
  S:=True;
 end;
-//Кладем пазл на полотно
+//РљР»Р°РґРµРј РїР°Р·Р» РЅР° РїРѕР»РѕС‚РЅРѕ
  if (Pole[X div XX,Y div YY]=0)and (PuzClick>0) and (S=False) then
   begin
   Pole[X div XX,Y div YY]:=PuzClick;
@@ -281,14 +281,13 @@ end;
 
  end;
 end;
-//Кнопка "рестарт" возвращает пазлы на изначальное положение перетосовав их между собой
+//РљРЅРѕРїРєР° "СЂРµСЃС‚Р°СЂС‚" РІРѕР·РІСЂР°С‰Р°РµС‚ РїР°Р·Р»С‹ РЅР° РёР·РЅР°С‡Р°Р»СЊРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ РїРµСЂРµС‚РѕСЃРѕРІР°РІ РёС… РјРµР¶РґСѓ СЃРѕР±РѕР№
 procedure TForm1.N1Click(Sender: TObject);
 begin
 Puzzle;
 Timer1.Enabled:=True;
 end;
 end.
-
 
 
 
