@@ -27,27 +27,26 @@ var
 implementation
 uses unit1, Unit3;
 {$R *.dfm}
-  //Закрытие формы Form2 при нажатии кнопки  "Выход"
+  //Р—Р°РєСЂС‹С‚РёРµ С„РѕСЂРјС‹ Form2 РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё  "Р’С‹С…РѕРґ"
   procedure TForm2.Button4Click(Sender: TObject);
   begin
   form2.Close;
   end;
 
-  //Скрываем форму Form2 при нажатии кнопки  "Играть"
+  //РЎРєСЂС‹РІР°РµРј С„РѕСЂРјСѓ Form2 РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё  "РРіСЂР°С‚СЊ"
   procedure TForm2.Button1Click(Sender: TObject);
   begin
   Form2.Visible:=false;
   form1.Show;
 
   end;
-  //Скрываем форму Form2 при нажатии кнопки  "Настройки"
+  //РЎРєСЂС‹РІР°РµРј С„РѕСЂРјСѓ Form2 РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё  "РќР°СЃС‚СЂРѕР№РєРё"
   procedure TForm2.Button2Click(Sender: TObject);
   begin
   form2.Visible:=false;
   form3.show
   end;
   end.
-
 
 
 
