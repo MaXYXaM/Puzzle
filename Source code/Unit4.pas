@@ -30,7 +30,7 @@ implementation
 uses unit1,unit2,unit3;
 
 {$R *.dfm}
-//Кнопка выбора сложности (сложность легкая)
+//РљРЅРѕРїРєР° РІС‹Р±РѕСЂР° СЃР»РѕР¶РЅРѕСЃС‚Рё (СЃР»РѕР¶РЅРѕСЃС‚СЊ Р»РµРіРєР°СЏ)
 procedure TForm4.Button1Click(Sender: TObject);
 begin
 Mer:=4;
@@ -38,7 +38,7 @@ Puzzle;
 form1.show ;
 form4.Visible:=false;
 end;
-//Кнопка выбора сложности   (сложность нормальная)
+//РљРЅРѕРїРєР° РІС‹Р±РѕСЂР° СЃР»РѕР¶РЅРѕСЃС‚Рё   (СЃР»РѕР¶РЅРѕСЃС‚СЊ РЅРѕСЂРјР°Р»СЊРЅР°СЏ)
 procedure TForm4.Button2Click(Sender: TObject);
 begin
 Mer:=8;
@@ -46,7 +46,7 @@ Puzzle;
 form1.show ;
 form4.Visible:=false;
 end;
-//Кнопка выбора сложности  (сложность сложная)
+//РљРЅРѕРїРєР° РІС‹Р±РѕСЂР° СЃР»РѕР¶РЅРѕСЃС‚Рё  (СЃР»РѕР¶РЅРѕСЃС‚СЊ СЃР»РѕР¶РЅР°СЏ)
 procedure TForm4.Button3Click(Sender: TObject);
 begin
 Mer:=16;
@@ -54,7 +54,7 @@ Puzzle;
 form1.show ;
 form4.Visible:=false;
 end;
-//Кнопка назад возвращает пользователя на форму выбора настроек
+//РљРЅРѕРїРєР° РЅР°Р·Р°Рґ РІРѕР·РІСЂР°С‰Р°РµС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР° С„РѕСЂРјСѓ РІС‹Р±РѕСЂР° РЅР°СЃС‚СЂРѕРµРє
 procedure TForm4.Button4Click(Sender: TObject);
 begin
 form3.Show;
