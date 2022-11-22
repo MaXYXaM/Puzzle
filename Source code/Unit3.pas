@@ -30,7 +30,7 @@ implementation
 uses unit1,unit2,unit4;
 
 {$R *.dfm}
-//По нажатию кнопки "Загрузить свою картинку" программа открывает диалоговое окно выбора картинки
+//РџРѕ РЅР°Р¶Р°С‚РёСЋ РєРЅРѕРїРєРё "Р—Р°РіСЂСѓР·РёС‚СЊ СЃРІРѕСЋ РєР°СЂС‚РёРЅРєСѓ" РїСЂРѕРіСЂР°РјРјР° РѕС‚РєСЂС‹РІР°РµС‚ РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ РІС‹Р±РѕСЂР° РєР°СЂС‚РёРЅРєРё
 procedure TForm3.Button1Click(Sender: TObject);
 begin
 opendialog1.InitialDir:=Path+'\Image';
@@ -38,20 +38,20 @@ opendialog1.InitialDir:=Path+'\Image';
    if OpenDialog1.FileName<> '' then
    begin
    Kart.LoadFromFile(OpenDialog1.FileName);
-   Orig.Canvas.StretchDraw(Rect(0,0,480,320),Kart);//И растягивает картинку до размеров 480х320
+   Orig.Canvas.StretchDraw(Rect(0,0,480,320),Kart);//Р СЂР°СЃС‚СЏРіРёРІР°РµС‚ РєР°СЂС‚РёРЅРєСѓ РґРѕ СЂР°Р·РјРµСЂРѕРІ 480С…320
    Puzzle;
    form1.show;
    form3.visible:=false;
    end;
 
 end;
-//Кнопка "Сложность" открывает form 4(форма с выбором уровней сложности) и скрывает form3
+//РљРЅРѕРїРєР° "РЎР»РѕР¶РЅРѕСЃС‚СЊ" РѕС‚РєСЂС‹РІР°РµС‚ form 4(С„РѕСЂРјР° СЃ РІС‹Р±РѕСЂРѕРј СѓСЂРѕРІРЅРµР№ СЃР»РѕР¶РЅРѕСЃС‚Рё) Рё СЃРєСЂС‹РІР°РµС‚ form3
 procedure TForm3.Button2Click(Sender: TObject);
 begin
 form4.show;
 form3.visible:=false;
 end;
-//Кнопка "Сложность" открывает form 2(форма с выбором уровней сложности) и скрывает form3
+//РљРЅРѕРїРєР° "РЎР»РѕР¶РЅРѕСЃС‚СЊ" РѕС‚РєСЂС‹РІР°РµС‚ form 2(С„РѕСЂРјР° СЃ РІС‹Р±РѕСЂРѕРј СѓСЂРѕРІРЅРµР№ СЃР»РѕР¶РЅРѕСЃС‚Рё) Рё СЃРєСЂС‹РІР°РµС‚ form3
 procedure TForm3.Button3Click(Sender: TObject);
 begin
 form2.show;
