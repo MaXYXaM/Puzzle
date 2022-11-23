@@ -62,7 +62,7 @@ Buf.Height:=640;
 Kart:=TJpegImage.Create;
 Kart.LoadFromFile(path+'\Image\1.jpg');
 
-
+//Масштабирование картинки под заданный размер
 Orig:=Tbitmap.Create;
 Orig.Width:=480;
 Orig.Height:=320;
@@ -70,7 +70,7 @@ Orig.Canvas.StretchDraw(Rect(0,0,480,320),Kart);
 
 for i:=0 to 15 do
 for j:=0 to 15 do
-//Два массива на два поле, 1-поле где складывается пазл,2-поле где ранее загруженная картинка разбивается на части
+//Два массива на два пояе, 1-поле где складывается пазл,2-поле где ранее загруженная картинка разбивается на части
 begin
 Copia[i,j]:=0;
 Pole[i,j]:=0;
@@ -167,6 +167,7 @@ end;
   Copia[i,j]:=0;
   Pole[i,j]:=0;
   end;
+  //Зависимость размера картинок от выбранного уровня сложности
   case Mer of
   4:begin XX:=120;YY:=80; end;
   8:begin XX:=60;YY:=40; end;
@@ -183,7 +184,7 @@ end;
   Pazl[n].Canvas.CopyRect(Rect(0,0,XX,YY),Orig.Canvas, Rect(i*XX,j*YY,i*XX+XX-1,j*YY+YY-1));
   n:=n+1;
   end;
-
+//Разделение картинки на пазлы в зависимости от уровня сложности 
   n:=1;
   Randomize;
   While(n<=Mer*Mer) do
@@ -224,7 +225,7 @@ procedure TForm1.FormMouseDown(Sender: TObject; Button: TMouseButton;
   var S:boolean;
   i,j:integer;
 begin
-
+//Возврат пазла на изначальное положение если был произведён клик по нему левой кнопкой мыши и затем клив правой кнопкой мыши
 if (Button=MBRight) and (PuzClick>0)then
 begin
 S:=false;
